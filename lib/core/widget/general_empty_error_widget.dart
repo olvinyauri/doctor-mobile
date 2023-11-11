@@ -4,7 +4,7 @@ import 'package:doctor_mobile/core/extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_conditional_rendering/flutter_conditional_rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lottie/lottie.dart';
+//import 'package:lottie/lottie.dart';
 
 class GeneralEmptyErrorWidget extends StatelessWidget {
   final String descText;
@@ -100,37 +100,37 @@ class GeneralEmptyErrorWidget extends StatelessWidget {
             isCentered ? MainAxisAlignment.center : MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Conditional.single(
-            context: context,
-            conditionBuilder: (context) =>
-                customUrlImage.isNotEmpty &&
-                (customUrlImage.getExtension() == 'png' ||
-                    customUrlImage.getExtension() == 'jpg' ||
-                    customUrlImage.getExtension() == 'jpeg'),
-            widgetBuilder: (context) => Image.asset(
-              customUrlImage.isEmpty
-                  ? AssetConst.drawDialogQuestion
-                  : customUrlImage,
-              width: 177.h,
-              fit: BoxFit.fitHeight,
-            ),
-            fallbackBuilder: (context) => Conditional.single(
-              context: context,
-              conditionBuilder: (context) =>
-                  customUrlImage.isNotEmpty &&
-                  customUrlImage.getExtension() == 'json',
-              widgetBuilder: (context) => Lottie.asset(
-                customUrlImage.isEmpty
-                    ? AssetConst.emptyAnimation
-                    : customUrlImage,
-                width: 0.8.sw,
-              ),
-              fallbackBuilder: (context) => Lottie.asset(
-                AssetConst.emptyAnimation,
-                width: 0.8.sw,
-              ),
-            ),
-          ),
+          // Conditional.single(
+          //   context: context,
+          //   conditionBuilder: (context) =>
+          //       customUrlImage.isNotEmpty &&
+          //       (customUrlImage.getExtension() == 'png' ||
+          //           customUrlImage.getExtension() == 'jpg' ||
+          //           customUrlImage.getExtension() == 'jpeg'),
+          //   widgetBuilder: (context) => Image.asset(
+          //     customUrlImage.isEmpty
+          //         ? AssetConst.drawDialogQuestion
+          //         : customUrlImage,
+          //     width: 177.h,
+          //     fit: BoxFit.fitHeight,
+          //   ),
+          //   fallbackBuilder: (context) => Conditional.single(
+          //     context: context,
+          //     conditionBuilder: (context) =>
+          //         customUrlImage.isNotEmpty &&
+          //         customUrlImage.getExtension() == 'json',
+          //     widgetBuilder: (context) => Lottie.asset(
+          //       customUrlImage.isEmpty
+          //           ? AssetConst.emptyAnimation
+          //           : customUrlImage,
+          //       width: 0.8.sw,
+          //     ),
+          //     fallbackBuilder: (context) => Lottie.asset(
+          //       AssetConst.emptyAnimation,
+          //       width: 0.8.sw,
+          //     ),
+          //   ),
+          // ),
           // SizedBox(
           //   height: 25.h,
           //   width: double.infinity,
