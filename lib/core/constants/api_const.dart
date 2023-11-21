@@ -1,7 +1,7 @@
 class ApiConst {
   ApiConst._();
-  static const String baseUrl = "http://192.168.8.6:8000/api/";
-  
+  static const String baseUrl = "http://192.168.8.123:8000/api/";
+
   static const String login = "auth/login";
   static const String register = "auth/register";
   static const String currentLoginUser = "auth/me";
